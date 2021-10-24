@@ -7,10 +7,15 @@ Deno.test({
   async fn() {
     const { server, controller } = serve();
     {
+      const decoder = new TextDecoder();
       const response = await fetch("http://localhost:8080/");
       assertEquals(
         await response.text(),
-        'Hello World from <a href="https://github.com/ayame113/deno_deploy_template">ayame113/deno_deploy_template</a> !',
+        decoder.decode(
+          await Deno.readFile(
+            new URL("./static/index.html", import.meta.url),
+          ),
+        ),
       );
       assertEquals(
         response.headers.get("content-type"),
