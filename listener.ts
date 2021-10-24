@@ -16,7 +16,7 @@ interface Listener {
 export const listeners: Listener[] = [
   {
     pattern: new URLPattern({ pathname: "/" }),
-    handler: async ({ request, url }) => {
+    handler: async () => {
       return new Response(
         await Deno.readFile(new URL("./static/index.html", import.meta.url)),
         {
