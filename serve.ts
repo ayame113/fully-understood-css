@@ -1,6 +1,6 @@
-import { listenAndServe } from "https://deno.land/std@0.113.0/http/server.ts";
-import * as path from "https://deno.land/std@0.113.0/path/mod.ts";
-import { contentType } from "https://deno.land/x/media_types@v2.10.2/mod.ts";
+import { listenAndServe } from "https://deno.land/std@0.114.0/http/server.ts";
+import * as path from "https://deno.land/std@0.114.0/path/mod.ts";
+import { contentType } from "https://deno.land/x/media_types@v2.11.0/mod.ts";
 
 import { listeners } from "./listener.ts";
 
