@@ -1,4 +1,4 @@
-import { listenAndServe } from "https://deno.land/std@0.114.0/http/server.ts";
+import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
 import * as path from "https://deno.land/std@0.114.0/path/mod.ts";
 import { contentType } from "https://deno.land/x/media_types@v2.11.0/mod.ts";
 
@@ -7,7 +7,7 @@ import { listeners } from "./listener.ts";
 // export for test
 export function serve() {
   const controller = new AbortController();
-  const server = listenAndServe(":8080", async (request) => {
+  const server = serve(async (request) => {
     const url = new URL(request.url);
 
     // serving dynamic web page from listener.ts
