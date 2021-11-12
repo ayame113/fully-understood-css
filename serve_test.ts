@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.113.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.114.0/testing/asserts.ts";
 
 import { serve } from "./serve.ts";
 
@@ -8,7 +8,7 @@ Deno.test({
     const { server, controller } = serve();
     {
       const decoder = new TextDecoder();
-      const response = await fetch("http://localhost:8080/");
+      const response = await fetch("http://localhost:8000/");
       assertEquals(
         await response.text(),
         decoder.decode(
@@ -23,7 +23,7 @@ Deno.test({
       );
     }
     {
-      const response = await fetch("http://localhost:8080/favicon.png");
+      const response = await fetch("http://localhost:8000/favicon.png");
       assertEquals(
         new Uint8Array(await response.arrayBuffer()),
         await Deno.readFile(
@@ -36,7 +36,7 @@ Deno.test({
       );
     }
     {
-      const response = await fetch("http://localhost:8080/foobar");
+      const response = await fetch("http://localhost:8000/foobar");
       assertEquals(
         await response.text(),
         "404 Not Found\n",
