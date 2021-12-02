@@ -1,13 +1,13 @@
-import { listenAndServe } from "https://deno.land/std@0.112.0/http/server.ts";
-import * as path from "https://deno.land/std@0.112.0/path/mod.ts";
-import { contentType } from "https://deno.land/x/media_types@v2.10.2/mod.ts";
+import { serve as sereHandler } from "https://deno.land/std@0.116.0/http/server.ts";
+import * as path from "https://deno.land/std@0.116.0/path/mod.ts";
+import { contentType } from "https://deno.land/x/media_types@v2.11.0/mod.ts";
 
 import { listeners } from "./listener.ts";
 
 // export for test
 export function serve() {
   const controller = new AbortController();
-  const server = listenAndServe(":8080", async (request) => {
+  const server = sereHandler(async (request) => {
     const url = new URL(request.url);
 
     // serving dynamic web page from listener.ts
