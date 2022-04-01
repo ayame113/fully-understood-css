@@ -1,6 +1,6 @@
-import { serve as sereHandler } from "https://deno.land/std@0.123.0/http/server.ts";
-import * as path from "https://deno.land/std@0.123.0/path/mod.ts";
-import { contentType } from "https://deno.land/x/media_types@v2.12.1/mod.ts";
+import { serve as sereHandler } from "https://deno.land/std@0.133.0/http/server.ts";
+import * as path from "https://deno.land/std@0.133.0/path/mod.ts";
+import { contentType } from "https://deno.land/x/media_types@v3.0.2/mod.ts";
 
 import { listeners } from "./listener.ts";
 
