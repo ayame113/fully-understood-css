@@ -8,9 +8,9 @@ try {
 
 interface Listener {
   pattern: URLPattern;
-  handler: ((
+  handler: (
     { request, url }: { request: Readonly<Request>; url: Readonly<URL> },
-  ) => Response | Promise<Response>);
+  ) => Response | Promise<Response>;
 }
 
 export const listeners: Listener[] = [
