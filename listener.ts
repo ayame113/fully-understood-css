@@ -2,7 +2,7 @@
 // For deno deploy, using built-in environment variable support.
 try {
   if (!Deno.env.get("DENO_DEPLOYMENT_ID")) {
-    await import("https://deno.land/x/dotenv@v3.2.0/load.ts");
+    await import("https://deno.land/x/dotenv@v3.2.2/load.ts");
   }
 } catch { /**/ }
 
